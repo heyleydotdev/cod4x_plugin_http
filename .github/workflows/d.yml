@@ -15,17 +15,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
+      uses: dlang-community/setup-dlang@v1
 
     - name: Install 32-bit toolchain and libraries
       run: |
         sudo dpkg --add-architecture i386
         sudo apt-get update
         sudo apt-get install nasm:i386 make gcc-multilib g++-multilib git
-  
-    - name: Setup Dlang
-      uses: dlang-community/setup-dlang@v1
-      with:
-        compiler: ldc # Use `dmd` if needed
 
     - name: 'Build'
       run: |
