@@ -21,7 +21,7 @@ jobs:
       run: |
         sudo dpkg --add-architecture i386
         sudo apt-get update
-        sudo apt-get install -y gcc-multilib g++-multilib libc6-dev-i386 libm6:i386
+        sudo apt-get install nasm:i386 make gcc-multilib g++-multilib git
 
     - name: 'Build'
       run: |
